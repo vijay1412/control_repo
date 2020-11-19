@@ -5,7 +5,7 @@ node 'master.puppet.vm'{
 node /^web/ {
 include role::app_server
 
-node wildflytest.puppet.vm {
+node 'wildflytest.puppet.vm' {
 include role::wildfly_server
 }
 node /^db/ {
