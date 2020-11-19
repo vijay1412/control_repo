@@ -12,6 +12,10 @@ exec {'untar':
   command  => '/bin/tar -xvf /var/opt/wildfly/wildfly-14.0.1.Final.tar.gz -C /var/opt/wildfly/',
   require => File["/var/opt/wildfly/wildfly-14.0.1.Final.tar.gz"]
  }
+ file {
+ 
+ }
+ 
  package {'java':
  ensure => present,
  }
