@@ -55,7 +55,6 @@ class profile::wildfly (
   Variant[Pattern[/^file:\/\//], Pattern[/^puppet:\/\//], Stdlib::Httpsurl, Stdlib::Httpurl] $install_source = "http://download.jboss.org/wildfly/${version}.Final/wildfly-${version}.Final.tar.gz",
   #Wildfly::Distribution $distribution                         = 'wildfly',
   Enum['sysvinit', 'systemd', 'upstart'] $init_system         = $facts['initsystem'],
-  Wildfly::Mode $mode                                         = 'standalone',
   Stdlib::Unixpath $dirname                                   = '/var/opt/wildfly',
   Stdlib::Unixpath $java_home                                 = '/usr/java/default',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
