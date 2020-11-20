@@ -1,4 +1,4 @@
-class profile::wildfly (
+class profile::wildfly::server (
   Stdlib::Unixpath $wildfly_home                              = '/var/opt/wildfly',
   Stdlib::Unixpath $java_home                                 = '/usr/java/default',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
@@ -23,5 +23,5 @@ class profile::wildfly (
   contain ::profile::base
   contain ::profile::wildfly::install
   Class ['profile::base] 
-  ->Class['profile::wildfly::install']
+  ->Class['profile::wildfly::server::install']
   }
