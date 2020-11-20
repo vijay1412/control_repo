@@ -14,5 +14,5 @@ class profile::wildfly::install(
       path     => ['/bin', '/usr/bin', '/sbin'],
       loglevel => 'notice',
       creates  => "${wildfly::dirname}/jboss-modules.jar",
-    }
+    
 
