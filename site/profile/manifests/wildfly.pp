@@ -83,5 +83,5 @@ class profile::wildfly (
   Integer $install_download_timeout                           = 500,
   ) {
   contain ::profile::wildfly::install
-  Class['::profile::wildfly::install']
+  Class['profile::wildfly::install']
   }
