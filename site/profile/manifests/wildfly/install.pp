@@ -17,7 +17,5 @@ class {'::wildfly':
       path     => ['/bin', '/usr/bin', '/sbin'],
       loglevel => 'notice',
       creates  => "${wildfly::dirname}/jboss-modules.jar",
-      user     => $wildfly::user,
-      group    => $wildfly::group,
     }
 
