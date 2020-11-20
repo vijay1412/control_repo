@@ -1,5 +1,5 @@
 
-class profile::wildfly (
+class wildfly (
   Stdlib::Unixpath $wildfly_home                              = '/var/opt/wildfly',
   Stdlib::Unixpath $java_home                                 = '/usr/java/default',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
