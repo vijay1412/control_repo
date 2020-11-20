@@ -5,6 +5,6 @@ class profile::wildfly::install(
     $install_file = basename($install_source)
 
     file { "${wildfly::install_cache_dir}/${install_file}":
-      source => $install_source,
+      source => $install_source
 }
 
