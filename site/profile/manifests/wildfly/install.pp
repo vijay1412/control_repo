@@ -1,5 +1,5 @@
 class wildfly::install  {
-  } {
+  
     $install_source = $profile::wildfly::install_source
     $install_file = basename($install_source)
 
