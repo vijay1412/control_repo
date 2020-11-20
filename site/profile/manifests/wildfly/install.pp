@@ -1,4 +1,3 @@
- Downloads and installs Wildfly from a remote source or a system package.
 class wildfly::install  {
   } {
     $install_source = $wildfly::install_source
