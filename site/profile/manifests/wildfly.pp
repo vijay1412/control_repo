@@ -21,6 +21,8 @@ class profile::wildfly (
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
   ) {
+  contain ::profile::base
   contain ::profile::wildfly::install
-  Class['profile::wildfly::install']
+  Class ['profile::base] 
+  ->Class['profile::wildfly::install']
   }
