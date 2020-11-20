@@ -1,9 +1,6 @@
 # Downloads and installs Wildfly from a remote source or a system package.
 class profile::wildfly::install(
 ){
-
-#
-class {'::wildfly':
     $install_source = $wildfly::install_source
     $install_file = basename($install_source)
 
