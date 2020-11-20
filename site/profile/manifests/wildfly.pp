@@ -56,7 +56,7 @@ class wildfly(
   Wildfly::Distribution $distribution                         = 'wildfly',
   Enum['sysvinit', 'systemd', 'upstart'] $init_system         = $facts['initsystem'],
   Wildfly::Mode $mode                                         = 'standalone',
-  Stdlib::Unixpath $dirname                                   = '/opt/wildfly',
+  Stdlib::Unixpath $dirname                                   = '/var/opt/wildfly',
   Stdlib::Unixpath $java_home                                 = '/usr/java/default',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
