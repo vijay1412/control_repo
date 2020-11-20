@@ -81,5 +81,7 @@ class wildfly(
   Integer $startup_wait                                       = 30,
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
-  )
+  ) {
+  
   Class['::profile::wildfly::install']
+  }
