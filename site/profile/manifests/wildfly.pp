@@ -1,9 +1,6 @@
 
 class profile::wildfly (
-  Pattern[/^(\d{1,}\.\d{1,}(\.\d{1,})?$)/] $version           = '9.0.2',
-  Variant[Pattern[/^file:\/\//], Pattern[/^puppet:\/\//], Stdlib::Httpsurl, Stdlib::Httpurl] $install_source = "http://download.jboss.org/wildfly/${version}.Final/wildfly-${version}.Final.tar.gz",
-  #Wildfly::Distribution $distribution                         = 'wildfly',
-  Stdlib::Unixpath $dirname                                   = '/var/opt/wildfly',
+  Stdlib::Unixpath $wildfly_home                              = '/var/opt/wildfly',
   Stdlib::Unixpath $java_home                                 = '/usr/java/default',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
