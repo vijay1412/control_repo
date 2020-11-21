@@ -1,4 +1,4 @@
-class profile::wildfly::install (
+class profile::wildfly::server::install (
 ){
 #Download 
 archive { "${profile::wildfly::wildfly_home}\\${profile::wildfly::wildfly-14.0.1.Final.tar.gz}":
