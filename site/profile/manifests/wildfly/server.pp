@@ -4,6 +4,7 @@ class profile::wildfly::server (
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
   Stdlib::Unixpath $deploy_cache_dir                          = '/opt',
+  $wildfly_install_bundle                                     = 'wildfly-14.0.1.Final.tar.gz',
   Boolean $manage_user                                        = true,
   String $user                                                = 'wildfly',
   Stdlib::Unixpath $user_home                                 = '/home/wildfly',
