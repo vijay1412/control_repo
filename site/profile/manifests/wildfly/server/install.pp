@@ -1,4 +1,5 @@
 class profile::wildfly::server::install (
+$wildfly_home = /var/opt/home
 ){
 #Download 
 archive { "wildfly-14.0.1.Final.tar.gz":
