@@ -21,5 +21,5 @@ class profile::wildfly::server (
   Integer $install_download_timeout                           = 500,
   ) {
   contain ::profile::base
-  contain ::profile::wildfly::install
+  contain ::profile::wildfly::server::install
   }
