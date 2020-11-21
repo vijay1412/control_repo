@@ -22,4 +22,6 @@ class profile::wildfly::server (
   ) {
   contain ::profile::base
   contain ::profile::wildfly::server::install
+     Class['profile::base']
+  -> Class['profile::wildfly::server::install']
   }
