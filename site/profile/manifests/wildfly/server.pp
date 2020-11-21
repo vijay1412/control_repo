@@ -23,5 +23,4 @@ class profile::wildfly::server (
   contain ::profile::base
   contain ::profile::wildfly::install
   Class ['::profile::base] 
-   include class ['profile::wildfly::server::install']
   }
