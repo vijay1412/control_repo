@@ -1,17 +1,4 @@
-class profile::wildfly::server::install (
-){
-#Download 
-archive { "${profile::wildfly::server::install_cache_dir}\\${profile::wildfly::server::wildfly_install_bundle}":
-ensure      => present ,
-source      => "https://download.jboss.org/wildfly/14.0.1.Final/wildfly-14.0.1.Final.tar.gz",
-extract_path => $profile::wildfly::server::wildfly_home,
-extract      => true,
-}
-}
-wildfly::undertow::https { 'https':
-  socket_binding    => 'https',
-  keystore_path     => '/vagrant/identitystore.jks',
-  keystore_password => 'changeit',
-  key_alias         => 'demo',
-  key_password      => 'changeit'
+class { 'wildfly':
+  version        => '14.0.1',
+  install_source => 'https://download.jboss.org/wildfly/14.0.1.Final/wildfly-14.0.1.Final.tar.gz',
 }
