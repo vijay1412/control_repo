@@ -8,7 +8,7 @@ wildfly::config::module { 'org.postgresql':
   dependencies => ['javax.api', 'javax.transaction.api']
 }
 
-wildfly_restart { 'config_restart':
+wildfly_restart {
 
 }
 wildfly::web::connector { 'https':
