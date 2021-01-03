@@ -7,6 +7,10 @@ wildfly::config::module { 'org.postgresql':
   source       => 'https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1103-jdbc4/postgresql-9.3-1103-jdbc4.jar',
   dependencies => ['javax.api', 'javax.transaction.api']
 }
+
+wildfly_restart {config_restart:
+
+}
 wildfly::web::connector { 'https':
   scheme         => 'https',
   protocol       => 'HTTP/1.1',
