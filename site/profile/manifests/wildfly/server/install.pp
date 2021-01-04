@@ -20,4 +20,4 @@ wildfly::web::ssl { 'ssl':
   certificate_key_file => '/opt/identitykeystore.jks',
   cipher_suite         => 'TLS_RSA_WITH_AES_128_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA',
 }
-
+}
