@@ -4,15 +4,4 @@
 class profile::wildfly::server::kernel(
   $vm_swappiness = '10',
   $vm_min_free_kbytes = '67584',
-) {
-
-  exec { 'tomcat-sysctl-refresh':
-    command     => '/sbin/sysctl --system',
-    subscribe   => [
-      File['/etc/sysctl.d/90-tomcat.conf'],
-    ],
-    refreshonly => true,
-  }
-
-}
-
+) 
