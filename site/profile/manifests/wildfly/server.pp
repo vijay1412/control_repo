@@ -23,6 +23,6 @@ class profile::wildfly::server (
   ) {
   contain ::profile::kernal
   contain ::profile::wildfly::server::install
-     Class['profile::kernal']
+     Class['profile::wildfly::server::kernal']
   -> Class['profile::wildfly::server::install']
   }
