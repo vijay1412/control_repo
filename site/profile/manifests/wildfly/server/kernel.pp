@@ -14,14 +14,5 @@ class profile::wildfly::server::kernel(
     refreshonly => true,
   }
 
-  # Set kernel settings for app
-  file { '/etc/sysctl.d/90-tomcat.conf':
-    ensure  => 'file',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => epp('profile/apache/tomcat/sysctl/90-tomcat.conf.epp'),
-  }
-
 }
 
