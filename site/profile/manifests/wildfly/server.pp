@@ -6,9 +6,9 @@ class profile::wildfly::server (
   Stdlib::Unixpath $deploy_cache_dir                          = '/opt',
   $wildfly_install_bundle                                     = 'wildfly-14.0.1.Final.tar.gz',
   $volume_name                      = 'wildfly',
-  $volume_size                      = '100mb',
+  $volume_size                      = '5g',
   Stdlib::Absolutepath $volume_dir  = "/opt/${volume_name}",
-  $volume_filesystem                = "/dev/${volume_group}/${volume_name}"
+                                                                                                                                                                                    $volume_filesystem                = "/dev/${volume_group}/${volume_name}"
   Boolean $manage_user                                        = true,
   String $user                                                = 'wildfly',
   Stdlib::Unixpath $user_home                                 = '/home/wildfly',
@@ -25,8 +25,8 @@ class profile::wildfly::server (
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
   ) {
-   contain ::profile::base
+   contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
-        Class['profile::base']
+        Class['profile::wildfly::server::filesystems']
      -> Class['profile::wildfly::server::install']
   }
