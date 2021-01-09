@@ -8,10 +8,9 @@
 # Dependencies:
 #   mod 'puppetlabs-lvm', '1.0.1'
 #
-
 class profile::wildfly::server::filesystems(
 )
-file { /var/cache/wget:
+file { '/var/cache/wget':
     ensure => directory,
     mode   => '0755',
     backup => false,
