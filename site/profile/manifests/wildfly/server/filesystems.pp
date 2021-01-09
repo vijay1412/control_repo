@@ -11,7 +11,7 @@
 
 class profile::wildfly::server::filesystems(
 
-file { $profile::apache::reverse_proxy::httpd_conf_dir:
+file { $profile::wildfly::server::$install_cache_dir :
     ensure => directory,
     mode   => '0755',
     backup => false,
