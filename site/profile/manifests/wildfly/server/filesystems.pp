@@ -10,5 +10,6 @@
 #
 
 class profile::wildfly::server::filesystems(
+)
 
   
