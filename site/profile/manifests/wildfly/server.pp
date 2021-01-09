@@ -5,6 +5,10 @@ class profile::wildfly::server (
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
   Stdlib::Unixpath $deploy_cache_dir                          = '/opt',
   $wildfly_install_bundle                                     = 'wildfly-14.0.1.Final.tar.gz',
+  $volume_name                      = 'wildfly',
+  $volume_size                      = '100mb',
+  Stdlib::Absolutepath $volume_dir  = "/opt/${volume_name}",
+  $volume_filesystem                = "/dev/${volume_group}/${volume_name}"
   Boolean $manage_user                                        = true,
   String $user                                                = 'wildfly',
   Stdlib::Unixpath $user_home                                 = '/home/wildfly',
