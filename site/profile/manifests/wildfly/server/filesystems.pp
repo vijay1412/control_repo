@@ -10,7 +10,7 @@
 #
 class profile::wildfly::server::filesystems(
 ){
-file { '$profile::wildfly::server::$install_cache_dir':
+file { '$profile::wildfly::server::install_cache_dir':
     ensure => 'directory',
   }
   }
