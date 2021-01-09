@@ -7,8 +7,7 @@ class profile::wildfly::server (
   $wildfly_install_bundle                                     = 'wildfly-14.0.1.Final.tar.gz',
   $volume_name                      = 'wildfly',
   $volume_size                      = '5g',
-  Stdlib::Absolutepath $volume_dir  = "/opt/${volume_name}",
-                                                                                                                                                                                    $volume_filesystem                = "/dev/${volume_group}/${volume_name}"
+  Stdlib::Absolutepath $volume_dir  = "/opt/${volume_name}",                                                                                                                                                                $volume_filesystem                = "/dev/${volume_group}/${volume_name}"
   Boolean $manage_user                                        = true,
   String $user                                                = 'wildfly',
   Stdlib::Unixpath $user_home                                 = '/home/wildfly',
