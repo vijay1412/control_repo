@@ -15,7 +15,7 @@ file { $profile::wildfly::server::$install_cache_dir :
     ensure => directory,
     mode   => '0755',
     backup => false,
-
+}
 )
 
   
