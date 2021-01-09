@@ -25,11 +25,11 @@ class profile::wildfly::server::filesystems(
   Stdlib::Absolutepath $app_logs_mount_point,
 
   # Volume sizes (with defaults)
-  $catalina_home_size = '5G',
-  $catalina_base_size = '5G',
-  $deployedapps_size = '5G',
-  $server_logs_size = '5G',
-  $app_logs_size = '5G',
+  $catalina_home_size = '100mb',
+  $catalina_base_size = '100mb',
+  $deployedapps_size = '100mb',
+  $server_logs_size = '100mb',
+  $app_logs_size = '100mb',
 
   # Logical Volume Group where volumes are created
   $volume_group = lookup('non_system_volume_group'),
