@@ -10,12 +10,12 @@
 #
 
 class profile::wildfly::server::filesystems(
-
-file { $profile::wildfly::server::$install_cache_dir :
+)
+file { /var/cache/wget:
     ensure => directory,
     mode   => '0755',
     backup => false,
 }
-)
+
 
   
