@@ -10,11 +10,9 @@
 #
 class profile::wildfly::server::filesystems(
 )
-file { '/var/cache/wget':
-    ensure => directory,
-    mode   => '0755',
-    backup => false,
-}
+file { '/etc/site-conf':
+    ensure => 'directory',
+  }
 
 
   
