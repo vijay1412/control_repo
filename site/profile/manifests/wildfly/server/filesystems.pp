@@ -9,9 +9,10 @@
 #   mod 'puppetlabs-lvm', '1.0.1'
 #
 class profile::wildfly::server::filesystems(
-)
+){
 file { '/etc/site-conf':
     ensure => 'directory',
+  }
   }
 
 
