@@ -9,12 +9,12 @@
 #   mod 'puppetlabs-lvm', '1.0.1'
 #
 
-class profile::tomcat::filesystems(
+class profile::wildfly::server::filesystems(
 
   # User and Group that owns the filesystems
   # These do not have defaults and MUST be defined by the caller
-  $tomcat_user,
-  $tomcat_group,
+  $tomcat_user = wildfly
+  $tomcat_group =wildfly
 
   # Mount points
   # These do not have defaults and MUST be defined by the caller
