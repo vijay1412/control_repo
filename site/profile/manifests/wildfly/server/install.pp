@@ -5,6 +5,11 @@ class { 'wildfly':
   properties       => {
     'jboss.bind.address'            => '0.0.0.0',
     'jboss.bind.address.management' => '0.0.0.0',
+    'jboss.management.http.port' => '9990',
+    'jboss.management.https.port' => '9993',
+    'jboss.http.port' => '8080',
+    'jboss.https.port' => '8443',
+    'jboss.ajp.port' => '8009',
   },
   conf_file      => '/etc/default/wildfly.conf',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
