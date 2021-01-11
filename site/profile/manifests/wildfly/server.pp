@@ -20,8 +20,7 @@ class profile::wildfly::server (
   Integer $startup_wait                                       = 30,
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
-  $public_bind                                                = 0.0.0.0
-  $mgmt_bind                                                  = 0.0.0.0
+  
   ) {
    contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
