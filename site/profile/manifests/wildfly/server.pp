@@ -23,8 +23,6 @@ class profile::wildfly::server (
   ) {
    contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
-   contain ::profile::wildfly::server::services
         Class['profile::wildfly::server::filesystems']
-     -> Class['profile::wildfly::server::install']
-     -> Class['profile::wildfly::server::services']          
+     -> Class['profile::wildfly::server::install']        
   }
