@@ -12,7 +12,7 @@ class profile::wildfly::server (
   String $java_xms                                            = '256m',
   String $java_maxpermsize                                    = '128m',
   String $package_ensure                                      = 'present',
-  Boolean $service_ensure                                     = true,
+  Boolean $service_ensure                                    = true,
   Boolean $service_enable                                     = true,
   Boolean $remote_debug                                       = false,
   Boolean $external_facts                                     = false,
@@ -20,6 +20,8 @@ class profile::wildfly::server (
   Integer $startup_wait                                       = 30,
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
+  $public_bind                                                = 0.0.0.0
+  $mgmt_bind                                                  = 0.0.0.0
   ) {
    contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
