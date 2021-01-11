@@ -5,6 +5,6 @@ file { '/etc/default/wildfly.conf':
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => epp('profile/wildfly/server/wildfly.sysvinit.conf.epp'),
+    content => epp('modules/wildfly/templates/wildfly.sysvinit.conf.epp'),
     }
     }
