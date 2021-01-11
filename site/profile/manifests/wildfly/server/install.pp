@@ -2,8 +2,7 @@ class profile::wildfly::server::install {
 class { 'wildfly':
   version        => '14.0.0',
   install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
-  conf_file      => '/etc/default/wildfly.conf'
-  conf_template  => 'wildfly/wildfly.sysvinit.conf.epp',
+  conf_file      => '/etc/default/wildfly.conf',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
 ~>
