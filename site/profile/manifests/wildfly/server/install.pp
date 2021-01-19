@@ -26,5 +26,9 @@ wildfly::undertow::https { 'https':
   key_alias         => 'demo',
   key_password      => 'changeit'
 }
+wildfly::logging::category { 'org.jboss.deployment':
+  level               => 'DEBUG',
+  use_parent_handlers =>  true,
+}
 
 }
