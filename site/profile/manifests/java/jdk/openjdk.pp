@@ -22,9 +22,4 @@ class profile::java::jdk::openjdk(
   # Install JDK (devel) packages, not just jre
   package { "java-${version}-openjdk-devel.x86_64":
     ensure  => installed,
-    require => Exec[
-      'uninstall-other-openjdk',
-      'uninstall-all-oracle-jdk',
-      'uninstall-all-corretto-jdk',
-    ],
   }
