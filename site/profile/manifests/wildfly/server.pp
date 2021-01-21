@@ -1,6 +1,7 @@
 class profile::wildfly::server (
   Stdlib::Unixpath $wildfly_home                              = '/var/opt/wildfly',
-  Stdlib::Unixpath $java_home                                 = '/usr/java/default',
+  $jdk_type = 'openjdk',
+  $jdk_version = '1.8.0',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
   Stdlib::Unixpath $deploy_cache_dir                          = '/opt',
