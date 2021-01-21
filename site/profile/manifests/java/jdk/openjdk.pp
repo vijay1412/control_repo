@@ -10,10 +10,6 @@ class profile::java::jdk::openjdk(
   $version = '1.8.0',
   $java_home = '/usr/lib/jvm/java',
 ) {
-  include ::profile::java::jdk::openjdk::uninstall::other
-  include ::profile::java::jdk::oracle::uninstall::all
-  include ::profile::java::jdk::corretto::uninstall::all
-
   # Derive the java major version
   case $version {
     /^1\.6/: { $version_major = '6' }
