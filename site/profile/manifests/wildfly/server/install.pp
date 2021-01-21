@@ -11,6 +11,7 @@ class { 'wildfly':
     'jboss.https.port' => '8443',
     'jboss.ajp.port' => '8009',
   },
+  java_home      => '$profile::wildfly::server::java_home',
   conf_file      => '/etc/default/wildfly.conf',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
