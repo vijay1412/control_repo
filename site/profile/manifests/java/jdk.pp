@@ -33,6 +33,8 @@ class profile::java::jdk(
         }
         default: {
           fail("ERROR: Unsupported openjdk version ${version}")
+          
         }
       }
     }
+}
