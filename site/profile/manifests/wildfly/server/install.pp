@@ -1,7 +1,15 @@
 ############################################
 #WILD FLY ADDING JAVA PROFLE AND INSTALL
 #############################################
-class profile::wildfly::server::install {
+class profile::wildfly::server::install(
+){
+
+#INSTALL JDK
+class { '::profile::java::jdk':
+  type => $profile::wildfly::server::jdk_type,
+  version => $profile::wildfly::server::jdk_version,
+  }
+
 class { 'wildfly':
   version        => '14.0.0',
   install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
@@ -14,6 +22,7 @@ class { 'wildfly':
     'jboss.https.port' => '8443',
     'jboss.ajp.port' => '8009',
   },
+  require => Class['::profile::java::jdk',],
   java_home      => 'profile::java::jdk::java_home}',
   conf_file      => '/etc/default/wildfly.conf',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
