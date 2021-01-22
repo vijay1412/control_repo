@@ -20,3 +20,19 @@ class profile::java::jdk(
           fail("ERROR: Unsupported openjdk version ${version}")
         }
       }
+}
+'oracle': {
+      case $version {
+        '1.6.0', '1.7.0', '1.8.0', '11': {
+          $java_home = '/usr/java/default'
+
+          class { '::profile::java::jdk::oracle':
+            version   => $version,
+            java_home => $java_home,
+          }
+        }
+        default: {
+          fail("ERROR: Unsupported openjdk version ${version}")
+        }
+      }
+    }
