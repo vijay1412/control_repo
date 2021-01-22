@@ -9,7 +9,7 @@ class { '::profile::java::jdk':
   type => $profile::wildfly::server::jdk_type,
   version => $profile::wildfly::server::jdk_version,
   }
-$jdk_home = '$profile::java::jdk::java_home',
+$jdk_home = '$profile::java::jdk::java_home'
 class { 'wildfly':
   version        => '14.0.0',
   install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
