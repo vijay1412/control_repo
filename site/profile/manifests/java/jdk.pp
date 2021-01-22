@@ -20,6 +20,3 @@ class profile::java::jdk(
           fail("ERROR: Unsupported openjdk version ${version}")
         }
       }
-    }
-  }
-}
