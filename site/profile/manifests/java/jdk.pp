@@ -21,4 +21,4 @@ class profile::java::jdk(
         }
       }
     }
-}
+  }
