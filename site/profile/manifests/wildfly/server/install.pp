@@ -23,7 +23,7 @@ class { 'wildfly':
     'jboss.ajp.port' => '8009',
   },
   require => Class['::profile::java::jdk',],
-  java_home      => 'profile::java::jdk::java_home}',
+  java_home      => '$profile::java::jdk::java_home}',
   conf_file      => '/etc/default/wildfly.conf',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
