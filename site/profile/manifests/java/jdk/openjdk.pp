@@ -23,3 +23,4 @@ class profile::java::jdk::openjdk(
   package { "java-${version}-openjdk-devel.x86_64":
     ensure  => installed,
   }
+}
