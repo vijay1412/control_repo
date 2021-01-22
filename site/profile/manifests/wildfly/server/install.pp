@@ -9,7 +9,7 @@ class { '::profile::java::jdk':
   type => $profile::wildfly::server::jdk_type,
   version => $profile::wildfly::server::jdk_version,
   }
-
+$jdk_home = '$profile::java::jdk::java_home',
 class { 'wildfly':
   version        => '14.0.0',
   install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
@@ -22,7 +22,7 @@ class { 'wildfly':
     'jboss.https.port' => '8443',
     'jboss.ajp.port' => '8009',
   },
-  java_home => '$profile::java::jdk::java_home',
+  java_home => '$jdk_home',
   #java_home => '/usr/lib/jvm/java',
   require => Class['::profile::java::jdk',],
   conf_file      => '/etc/wildfly/wildfly.conf',
