@@ -22,7 +22,7 @@ class { 'wildfly':
     'jboss.https.port' => '8443',
     'jboss.ajp.port' => '8009',
   },
-  java_home => '$java_home',
+  #java_home => '$java_home',
   #java_home => '/usr/lib/jvm/java',
   #require => Class['::profile::java::jdk',],
   #conf_file      => '/etc/wildfly/wildfly.conf',
