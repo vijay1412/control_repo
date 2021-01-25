@@ -1,5 +1,5 @@
 class profile::wildfly::server (
-  $wildfly_home                              = '/opt/wildfly/wildfly-14.1',
+  $wildfly_home                                              = '/opt/wildfly/wildfly-14',
   $jdk_type = 'openjdk',
   $jdk_version = '1.8.0',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
