@@ -13,5 +13,5 @@ WILDFLY_MODE=<%= $wildfly::mode %>
 WILDFLY_HOME="<%= $wildfly::dirname %>"
 
 # Location of JDK
-JAVA_HOME=<%= $profile::java::jdk %>
+JAVA_HOME=<%= $profile::java::jdk::java_home %>
 ~                                          
