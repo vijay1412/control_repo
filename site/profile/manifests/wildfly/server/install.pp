@@ -27,7 +27,7 @@ class { 'wildfly':
   #require => Class['::profile::java::jdk',],
   #conf_file      => '/etc/wildfly/wildfly.conf',
   #dirname           =>'/opt/wildfly/wildfly-14',
-  dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home'),
+  dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home),
   conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
