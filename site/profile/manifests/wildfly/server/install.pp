@@ -23,12 +23,12 @@ class { 'wildfly':
     'jboss.ajp.port' => '8009',
   },
   #java_home => '$java_home',
-  #java_home => '/usr/lib/jvm/java',
+  java_home => Stdlib::Unixpath($profile::java::jdk::java_home),
   #require => Class['::profile::java::jdk',],
   #conf_file      => '/etc/wildfly/wildfly.conf',
   #dirname           =>'/opt/wildfly/wildfly-14',
   dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home),
-  conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
+  #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
 ~>
