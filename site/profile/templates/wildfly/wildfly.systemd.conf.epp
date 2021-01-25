@@ -7,7 +7,7 @@ WILDFLY_CONFIG="'<%= $config %> -P <%= $wildfly::dirname %>/jboss.properties'"
 WILDFLY_MODE=<%= $wildfly::mode %>
 
 # Location of WildFly
-WILDFLY_HOME="<%= $wildfly::dirname %>"
+WILDFLY_HOME="<%= $profile::wildfly::server::wildfly_home %>"
 
 # Location of JDK
 JAVA_HOME=<%= $profile::java::jdk::java_home %>
