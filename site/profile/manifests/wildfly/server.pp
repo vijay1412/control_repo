@@ -1,6 +1,7 @@
 class profile::wildfly::server (
   Stdlib::Unixpath $wildfly_home                              = '/var/opt/wildfly',
-  $jdk_type = 'openjdk',
+  #$jdk_type = 'openjdk',
+  $jdk_type = 'oracle',
   $jdk_version = '1.8.0',
   Stdlib::Unixpath $console_log                               = '/var/log/wildfly/console.log',
   Stdlib::Unixpath $install_cache_dir                         = '/var/cache/wget',
