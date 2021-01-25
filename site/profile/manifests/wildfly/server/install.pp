@@ -26,7 +26,6 @@ class { 'wildfly':
   #java_home => '/usr/lib/jvm/java',
   #require => Class['::profile::java::jdk',],
   #conf_file      => '/etc/wildfly/wildfly.conf',
-  conf_template  => '/profile/templates/wildfly.systemd.conf.epp',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
 ~>
