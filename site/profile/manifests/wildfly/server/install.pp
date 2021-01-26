@@ -46,7 +46,11 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
-wildfly::cli { "increase ajp post value":
-  command => "/subsystem=undertow/server=default-server/ajp-listener=ajp:write-attribute(name=max-post-size,value=20000000)",
-  }
+#wildfly::cli { "increase ajp post value":
+ # command => "/subsystem=undertow/server=default-server/ajp-listener=ajp:write-attribute(name=max-post-size,value=20000000)",
+  #}
+  wildfly::cli { "Enable ADatasource":
+  command => "/subsystem=datasources/data-source=ADatasource:enable",
+  unless  => "(result == true) of /subsystem=datasources/data-source=ADatasource:read-attribute(name=enabled)",
+}
 }
