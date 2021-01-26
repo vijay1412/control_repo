@@ -50,8 +50,8 @@ wildfly_resource { "/subsystem=datasources/data-source=MyDS":
   ensure            => 'present',
   #username          => 'admin',
  # password          => 'password',
- # host              => '192.168.33.10',
- # port              => '9990',
+  host              => 'wildflytest',
+  port              => '9990',
   state             => {
     'driver-name'    => 'postgresql',
     'connection-url' => 'jdbc:postgresql://localhost/postgres',
