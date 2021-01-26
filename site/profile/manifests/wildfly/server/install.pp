@@ -46,5 +46,9 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
+wildfly::cli { "Enable ajp post":
+  command => "subsystem=undertow/server=default-server/ajp-listener=ajp:write-attribute(name=max-post-size=20000000)",
+  }
 }
+
 
