@@ -47,11 +47,17 @@ wildfly::logging::category { 'org.jboss.deployment':
   use_parent_handlers =>  true,
 }
 
-wildfly_resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
-     ensure => 'present',
-     path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
-     operation_headers => {
-     'max-post-size' => '2000',
-      },
-   }
+#wildfly_resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
+ #    ensure => 'present',
+  #   path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
+   #  operation_headers => {
+    # 'max-post-size' => '2000',
+     # },
+   #}
+   wildfly::resource { 'subsystem=undertow/server=default-server/ajp-listener=ajp':
+    content => {
+      'max-post-size' => '2000',
+    }
+  }
+
 }
