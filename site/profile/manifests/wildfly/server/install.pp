@@ -53,6 +53,6 @@ wildfly::logging::category { 'org.jboss.deployment':
   #      'max-ajp-packet-size' => '65536',
    #      'scheme' => 'https',
     #     }
-     }
+     #}
 }
 
