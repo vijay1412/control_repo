@@ -36,17 +36,17 @@ class { 'wildfly':
  # retries => 2,
   #wait    => 30,
 #}
-#wildfly::undertow::https { 'https':
- # socket_binding    => 'https',
-  #keystore_path     => '/vagrant/identitystore.jks',
-  #keystore_password => 'changeit',
-  #key_alias         => 'demo',
-  #key_password      => 'changeit'
-#}
-#wildfly::logging::category { 'org.jboss.deployment':
- # level               => 'DEBUG',
-  #use_parent_handlers =>  true,
-#}
+wildfly::undertow::https { 'https':
+  socket_binding    => 'https',
+  keystore_path     => '/vagrant/identitystore.jks',
+  keystore_password => 'changeit',
+  key_alias         => 'demo',
+  key_password      => 'changeit'
+}
+wildfly::logging::category { 'org.jboss.deployment':
+  level               => 'DEBUG',
+  use_parent_handlers =>  true,
+}
 
 }
 
