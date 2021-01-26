@@ -31,11 +31,11 @@ class { 'wildfly':
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
   java_opts      => '-Djava.net.preferIPv4Stack=true'
 }
-~>
-wildfly::restart { 'Restart required':
-  retries => 2,
-  wait    => 30,
-}
+#~>
+#wildfly::restart { 'Restart required':
+ # retries => 2,
+  #wait    => 30,
+#}
 #wildfly::undertow::https { 'https':
  # socket_binding    => 'https',
   #keystore_path     => '/vagrant/identitystore.jks',
