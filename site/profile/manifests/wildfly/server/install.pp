@@ -46,27 +46,27 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
-#wildfly_resource { "/subsystem=datasources/data-source=MyDS":
- # ensure            => 'present',
+wildfly_resource { "/subsystem=datasources/data-source=MyDS":
+  ensure            => 'present',
   #username          => 'admin',
  # password          => 'password',
  # host              => '192.168.33.10',
  # port              => '9990',
- # state             => {
-  #  'driver-name'    => 'postgresql',
-  #  'connection-url' => 'jdbc:postgresql://localhost/postgres',
-  #  'jndi-name'      => 'java:jboss/datasources/MyDS',
-   # 'user-name'      => 'postgres',
-   # 'password'       => 'postgres',
-  #},
-#}
+  state             => {
+    'driver-name'    => 'postgresql',
+    'connection-url' => 'jdbc:postgresql://localhost/postgres',
+   'jndi-name'      => 'java:jboss/datasources/MyDS',
+   'user-name'      => 'postgres',
+   'password'       => 'postgres',
+  },
+}
 
-wildfly_resource { "/subsystem=undertow/server=default-server/ajp-listener=ajp":
+#wildfly_resource { "/subsystem=undertow/server=default-server/ajp-listener=ajp":
 #ensure => 'present',
-state  => { 'max-post-size' =>  '20000000',
-             'max-ajp-packet-size' => '65536',
-              'scheme' => 'https',
-         },
-     }
+#state  => { 'max-post-size' =>  '20000000',
+#             'max-ajp-packet-size' => '65536',
+ #             'scheme' => 'https',
+  #       },
+   #  }
 }
 
