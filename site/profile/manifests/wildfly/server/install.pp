@@ -46,9 +46,10 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
-wildfly::cli { "max-post-size value":
-     command => "/subsystem=undertow/server=default-server/ajp-listener=ajp:write-attribute(max-post-size=2000)",
-    # command => "/subsystem=undertow/server=default-server/ajp-listener=ajp:write-attribute(name=max-post-size,value=20000000)",
-  }
 
+wildfly_resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
+     operation_headers => {
+     max-post-size => 2000
+      },
+   }
 }
