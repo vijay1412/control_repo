@@ -39,8 +39,7 @@ class { 'wildfly':
 wildfly::undertow::https { 'https':
   socket_binding    => 'https',
   keystore_path     => '/vagrant/identitystore.jks',
-  keystore_password => 'changeit',
-  
+  keystore_password => 'changeit'
 }
 wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
