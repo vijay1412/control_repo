@@ -37,7 +37,7 @@ class { 'wildfly':
   #dirname           =>'/opt/wildfly/wildfly-14',
   dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home),
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
-  java_opts      => $java_opts_default ,
+  java_opts      => $profile::wildfly::server::install::java_opts_default ,
                      
                   
 }
