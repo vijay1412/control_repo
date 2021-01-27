@@ -46,12 +46,12 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
- -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=proxy1':
-    content => {
-      'host' => '172.28.128.10',
-      'port' => '6666'
-    }
-  }
+# -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=proxy1':
+ #   content => {
+  #    'host' => '172.28.128.10',
+   #   'port' => '6666'
+    #}
+  #}
 
 -> wildfly::resource { '/subsystem=undertow/server=default-server/ajp-listener=ajp':
      #path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
