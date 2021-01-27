@@ -31,7 +31,7 @@ class { 'wildfly':
   #dirname           =>'/opt/wildfly/wildfly-14',
   dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home),
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
-  java_opts      =>  '-Djava.net.preferIPv4Stack=true,-Djava.net.preferIPv4Addresses=true,'
+  java_opts      =>  '-Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true,'
   
   }
 #~>
