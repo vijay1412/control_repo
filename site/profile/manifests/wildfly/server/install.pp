@@ -72,7 +72,7 @@ wildfly::logging::category { 'org.jboss.deployment':
       'max-post-size'        => 20000000,
       'scheme' =>https,
        'max-ajp-packet-size' =>65536,
-        },
+        }
        }
         wildfly::resource { '/subsystem=undertow/servlet-container=default/setting=jsp':
     content => {
