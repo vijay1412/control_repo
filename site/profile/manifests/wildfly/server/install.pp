@@ -10,6 +10,13 @@ class { '::profile::java::jdk':
   version => $profile::wildfly::server::jdk_version,
   }
   
+  $java_opts_default = [
+                      '-Djava.net.preferIPv4Addresses=true',
+                      '-Djava.net.preferIPv4Stack=true',
+                      "-Djavax.net.ssl.keyStore=${profile::wildfly::server::java_keystore_file}",
+                      "-Djavax.net.ssl.keyStorePassword =${jks_password}",
+                      ]
+  
 class { 'wildfly':
   version        => '14.0.0',
   install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
