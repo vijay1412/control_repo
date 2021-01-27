@@ -39,7 +39,7 @@ class { 'wildfly':
 #}
 wildfly::undertow::https { 'https':
   socket_binding    => 'https',
-  keystore_path     => ($profile::wildfly::server::java_keystore_file),
+  keystore_path     => '${profile::wildfly::server::java_keystore_file}',
   keystore_password => 'changeit'
 }
 wildfly::logging::category { 'org.jboss.deployment':
