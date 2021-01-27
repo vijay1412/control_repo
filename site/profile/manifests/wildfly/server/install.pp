@@ -71,7 +71,7 @@ wildfly::logging::category { 'org.jboss.deployment':
        }
        -> wildfly::resource { '/subsystem=undertow/servlet-container=default/setting=jsp':
     content => {
-      'tag-pooling' => false
+      'tag-pooling' => false,
       'trim-spaces' => true,
         },
        }
