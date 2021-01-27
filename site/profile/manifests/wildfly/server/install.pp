@@ -33,8 +33,8 @@ class { 'wildfly':
   java_opts      => ['-Djava.net.preferIPv4Stack=true',
                       'Djava.net.preferIPv4Addresses=true',
                      '-Djavax.net.ssl.keyStore=${profile::wildfly::server::java_keystore_file},
-                     '-Djavax.net.ssl.keyStorePassword =${jks_password},
-                  ],
+                     '-Djavax.net.ssl.keyStorePassword =${jks_password}',
+                  ]
 }
 #~>
 #wildfly::restart { 'Restart required':
