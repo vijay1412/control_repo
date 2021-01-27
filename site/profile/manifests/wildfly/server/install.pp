@@ -69,5 +69,10 @@ wildfly::logging::category { 'org.jboss.deployment':
        'max-ajp-packet-size' =>65536,
         },
        }
-   
-}
+       -> wildfly::resource { '/subsystem=undertow/servlet-container=default/setting=jsp':
+    content => {
+      'tag-pooling' => false
+      'trim-spaces' => true,
+        },
+       }
+   }
