@@ -51,7 +51,7 @@ wildfly::logging::category { 'org.jboss.deployment':
      ensure => 'present',
      path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
   #   operat => {
-           state =>   {
+           content  =>   {
            'max-post-size' => '2000',
     },
    }
