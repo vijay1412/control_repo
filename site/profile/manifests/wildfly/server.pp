@@ -21,7 +21,7 @@ class profile::wildfly::server (
   Integer $startup_wait                                       = 30,
   Integer $shutdown_wait                                      = 30,
   Integer $install_download_timeout                           = 500,
-  
+  $java_keystore_file ='/vagrant/identitystore.jks'
   ) {
    contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
