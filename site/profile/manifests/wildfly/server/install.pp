@@ -64,14 +64,10 @@ wildfly::logging::category { 'org.jboss.deployment':
    
    -> wildfly::resource { '/subsystem=undertow/server=default-server/ajp-listener=ajp':
     content => {
-      'max-post-size'        => 2000,
+      'max-post-size'        => 20000000,
+      'scheme' =>https,
+       'max-ajp-packet-size' =>65536,
         },
        }
-    #->  wildfly_resource { 'subsystem=undertow/server=default-server/ajp-listener=ajp-listner':
-     # state => {
-      #'max-post-size' => '2000',
-    #},   
-    
- #}
-
+   
 }
