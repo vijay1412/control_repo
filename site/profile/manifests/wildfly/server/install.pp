@@ -53,14 +53,13 @@ wildfly::logging::category { 'org.jboss.deployment':
     }
   }
 
-#-> wildfly::resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
- #    ensure => 'present',
+-> wildfly::resource { 'subsystem=undertow/server=default-server/ajp-listener=ajp':
      #path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
   #   operat => {
-  #         content  =>   {
-   #        'max-post-size' => '2000',
-    #},
-   #}
+        content  =>   {
+          'max-post-size' => '2000',
+    },
+   }
     #->  wildfly_resource { 'subsystem=undertow/server=default-server/ajp-listener=ajp-listner':
      # state => {
       #'max-post-size' => '2000',
