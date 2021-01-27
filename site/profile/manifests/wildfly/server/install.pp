@@ -46,15 +46,21 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
+ -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=proxy1':
+    content => {
+      'host' => '172.28.128.10',
+      'port' => '6666'
+    }
+  }
 
--> wildfly::resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
-     ensure => 'present',
+#-> wildfly::resource { "subsystem=undertow/server=default-server/ajp-listener=ajp":
+ #    ensure => 'present',
      #path  => "/subsystem=undertow/server=default-server/ajp-listener=ajp",
   #   operat => {
-           content  =>   {
-           'max-post-size' => '2000',
-    },
-   }
+  #         content  =>   {
+   #        'max-post-size' => '2000',
+    #},
+   #}
     #->  wildfly_resource { 'subsystem=undertow/server=default-server/ajp-listener=ajp-listner':
      # state => {
       #'max-post-size' => '2000',
