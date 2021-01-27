@@ -73,6 +73,7 @@ wildfly::logging::category { 'org.jboss.deployment':
     content => {
       'tag-pooling' => false,
       'trim-spaces' => true,
+      'generate-strings-as-char-arrays' => true,
         },
        }
    }
