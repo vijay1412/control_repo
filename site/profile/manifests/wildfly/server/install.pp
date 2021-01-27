@@ -51,6 +51,9 @@ wildfly::logging::category { 'org.jboss.deployment':
   level               => 'DEBUG',
   use_parent_handlers =>  true,
 }
+wildfly::logging::category { 'org.jgroups':
+  level               => 'INFO',
+}
 # -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=proxy1':
  #   content => {
   #    'host' => '172.28.128.10',
