@@ -33,7 +33,7 @@ class { 'wildfly':
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
    java_opts      =>   "'-Djava.net.preferIPv4Stack=true'
                        '-Djava.net.preferIPv4Addresses=true'
-                       '-Djavax.net.ssl.keyStore=$profile::wildfly::server::java_keystore_file'
+                       '-Djavax.net.ssl.tomcatkeystorefile=$profile::wildfly::server::java_keystore_file'
                         '-Djavax.net.ssl.keyStorePassword =changeit'",
   }
 #~>
@@ -43,7 +43,8 @@ class { 'wildfly':
 #}
 wildfly::undertow::https { 'https':
   socket_binding    => 'https',
-  keystore_path     => ($profile::wildfly::server::java_keystore_file),
+  #keystore_path     => ($profile::wildfly::server::java_keystore_file),
+  keystore_path => $tomcatkeystorefile,
   keystore_password => 'changeit'
 }
 wildfly::logging::category { 'org.jboss.deployment':
