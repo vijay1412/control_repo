@@ -79,6 +79,6 @@ wildfly::logging::category { 'org.jboss.deployment':
       'tag-pooling' => false,
       'trim-spaces' => true,
       'generate-strings-as-char-arrays' => true,
-        },
+        }
        }
    }
