@@ -10,12 +10,6 @@ class { '::profile::java::jdk':
   version => $profile::wildfly::server::jdk_version,
   }
   
-  $java_opts_default = [
-                      '-Djava.net.preferIPv4Addresses=true',
-                      '-Djava.net.preferIPv4Stack=true',
-                      "-Djavax.net.ssl.keyStore=${profile::wildfly::server::java_keystore_file}",
-                      "-Djavax.net.ssl.keyStorePassword =${jks_password}",
-                      ]
   
 class { 'wildfly':
   version        => '14.0.0',
@@ -37,7 +31,11 @@ class { 'wildfly':
   #dirname           =>'/opt/wildfly/wildfly-14',
   dirname => Stdlib::Unixpath($profile::wildfly::server::wildfly_home),
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
-  java_opts      => $profile::wildfly::server::install::java_opts_default ,
+  java_opts      =>  '-Djava.net.preferIPv4Addresses=true',
+                      '-Djava.net.preferIPv4Stack=true',
+                      "-Djavax.net.ssl.keyStore=${profile::wildfly::server::java_keystore_file}",
+                      "-Djavax.net.ssl.keyStorePassword =${jks_password}",
+                   
                      
                   
 }
