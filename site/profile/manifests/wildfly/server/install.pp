@@ -84,4 +84,8 @@ wildfly::logging::category { 'org.jgroups':
       'generate-strings-as-char-arrays' => true,
         }
        }
+       wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
+  initial_hosts       => '172.28.128.1[12001]',
+  num_initial_members => 2
+}
    }
