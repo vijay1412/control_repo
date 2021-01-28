@@ -84,5 +84,9 @@ wildfly::logging::category { 'org.jgroups':
       'generate-strings-as-char-arrays' => true,
         }
        }
-     
+       
+     wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
+  
+  }
+
    }
