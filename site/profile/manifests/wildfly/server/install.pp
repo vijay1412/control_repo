@@ -33,9 +33,9 @@ class { 'wildfly':
   #conf_template  => 'profile/wildfly/wildfly.systemd.conf.epp',
    java_opts      =>   "'-Djava.net.preferIPv4Stack=true'
                        '-Djava.net.preferIPv4Addresses=true'
+                       '-Djboss.default.jgroups.stack=tcp'
                        '-Djavax.net.ssl.tomcatkeystorefile=${profile::wildfly::server::java_keystore_file}'
                         '-Djavax.net.ssl.keyStorePassword =changeit'",
-                        '-Djboss.default.jgroups.stack=tcp'
   }
 #~>
 #wildfly::restart { 'Restart required':
