@@ -12,8 +12,8 @@ class { '::profile::java::jdk':
   
   
 class { 'wildfly':
-  version        => '14.0.0',
-  install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.0.Final.tar.gz',
+  version        => '14.0.1',
+  install_source => 'http://download.jboss.org/wildfly/14.0.0.Final/wildfly-14.0.1.Final.tar.gz',
   properties       => {
     'jboss.bind.address'            => '0.0.0.0',
     'jboss.bind.address.management' => '0.0.0.0',
