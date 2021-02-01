@@ -92,26 +92,6 @@ wildfly::logging::category { 'org.jgroups':
      
      #}
     
-  wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP":
-    recursive => true,
-    content   => {
-    protocols => [
-      'TCPGOSSIP',
-      'MERGE3',
-      { 'FD_SOCK' => { 'socket-binding' => 'jgroups-tcp-fd' } },
-      'FD',
-      'VERIFY_SUSPECT',
-      'pbcast.NAKACK2',
-      'UNICAST3',
-      'pbcast.STABLE',
-      'pbcast.GMS',
-      'UFC',
-      'MFC',
-      'FRAG2',
-      'RSVP'
-    ],
-      #'transport' => TCP,
-    }
-  }
+ 
 }
 
