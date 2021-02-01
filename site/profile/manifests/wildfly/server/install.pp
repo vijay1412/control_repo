@@ -35,6 +35,7 @@ class { 'wildfly':
                        '-Djava.net.preferIPv4Addresses=true'
                        '-Djavax.net.ssl.tomcatkeystorefile=${profile::wildfly::server::java_keystore_file}'
                         '-Djavax.net.ssl.keyStorePassword =changeit'",
+                        '-Djboss.default.jgroups.stack=tcp'
   }
 #~>
 #wildfly::restart { 'Restart required':
