@@ -114,4 +114,4 @@ wildfly::logging::category { 'org.jgroups':
     }
   }
 }
-}
+
