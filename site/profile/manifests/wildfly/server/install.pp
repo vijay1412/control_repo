@@ -92,7 +92,7 @@ wildfly::logging::category { 'org.jgroups':
      
      #}
     
-  wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP}":
+  wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP":
     recursive => true,
     content   => {
     protocols => [
