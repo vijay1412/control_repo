@@ -85,12 +85,33 @@ wildfly::logging::category { 'org.jgroups':
       'generate-strings-as-char-arrays' => true,
         }
        }
-      wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
-     initial_hosts       => '{amfam.nhq.gossip.router}[7777] ,{amfam.grl.gossip.router}[7777]',
-     num_initial_members => 2,
-     }
-     #wildfly::resource { '/subsystem=jgroups/stack=tcpgossip':
-  
-       # }
-
-   }
+     # wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
+     #initial_hosts       => '{amfam.nhq.gossip.router}[7777] ,{amfam.grl.gossip.router}[7777]',
+     #num_initial_members => 2,
+     #properties {
+     
+     #}
+    
+  wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP}":
+    recursive => true,
+    content   => {
+    protocols => [
+      'TCPGOSSIP',
+      'MERGE3',
+      { 'FD_SOCK' => { 'socket-binding' => 'jgroups-tcp-fd' } },
+      'FD',
+      'VERIFY_SUSPECT',
+      'pbcast.NAKACK2',
+      'UNICAST3',
+      'pbcast.STABLE',
+      'pbcast.GMS',
+      'UFC',
+      'MFC',
+      'FRAG2',
+      'RSVP'
+    ],
+      'transport' => TCP,
+    }
+  }
+}
+}
