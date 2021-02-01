@@ -110,7 +110,7 @@ wildfly::logging::category { 'org.jgroups':
       'FRAG2',
       'RSVP'
     ],
-      'transport' => TCP,
+      #'transport' => TCP,
     }
   }
 }
