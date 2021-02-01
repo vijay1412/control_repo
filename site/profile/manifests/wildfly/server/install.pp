@@ -86,6 +86,7 @@ wildfly::logging::category { 'org.jgroups':
        }
       wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
      initial_hosts       => '${amfam.nhq.gossip.router}[7777] ,${amfam.grl.gossip.router}[7777]',
-     num_initial_members => 2
+     num_initial_members => 2,
+     ensure => present
   }
    }
