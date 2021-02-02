@@ -150,4 +150,13 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
   wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.GMS":
     ensure => present,
     }   
+    
+    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=MFC":
+    ensure => present,
+    }   
+     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=FRAG2":
+    ensure => present,
+    }   
+   
+    
 }
