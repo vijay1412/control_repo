@@ -122,7 +122,7 @@ wildfly::logging::category { 'org.jgroups':
 /subsystem=jgroups/stack=tcpgossip/protocol=FRAG2:add
 /subsystem=jgroups/channel=ee:write-attribute(name=stack,value=tcpgossip)
 run-batch"
-},
+}
     }
 
 }
