@@ -86,45 +86,45 @@ wildfly::logging::category { 'org.jgroups':
         }
        }
        
-     wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
-     initial_hosts       => '{amfam.nhq.gossip.router}[8888] ,{amfam.grl.gossip.router}[8888]',
-     num_initial_members => 2,
+    # wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
+     #initial_hosts       => '{amfam.nhq.gossip.router}[8888] ,{amfam.grl.gossip.router}[8888]',
+     #num_initial_members => 2,
      
-     }
+     #}
      
     #######################
     #NEW CODE MANUAL CLI
     ######################
-   #wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
-   #ensure => present,
-   #content => {
-    #  'host' => "amfam.nhq.gossip.router",
-     # 'port' => 8888,
-      #  }
-       # }
-    #wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
-    #ensure => present,
-    #content => {
-     # 'host' => "amfam.grl.gossip.router",
-      #'port' => 8888,
-       # }
-       #}
-#~> wildfly::resource { "/subsystem=jgroups/stack=tcpgossip":
- #   recursive => true,
-  #  content   => {
-   #   #'protocol' => 'TCPGOSSIP',
-    ## 'TCP' => {
-      #  'socket-binding' => 'jgroups-tcp',
-      #}
-    #}
+   wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
+   ensure => present,
+   content => {
+    'host' => "amfam.nhq.gossip.router",
+    'port' => 8888,
+        }
+        }
+    wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
+    ensure => present,
+    content => {
+      'host' => "amfam.grl.gossip.router",
+      'port' => 8888,
+        }
+       }
+~> wildfly::resource { "/subsystem=jgroups/stack=tcpgossip":
+    recursive => true,
+    content   => {
+      'protocol' => 'TCPGOSSIP',
+     'TCP' => {
+        'socket-binding' => 'jgroups-tcp',
+      }
+    }
 
-   # }
-  #}
+    }
+  }
 
 ~> wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
     ensure => present,
-  #  content => {
-   #   'socket-binding' => "jgroups-host-a, jgroups-host-b",
-    #    }
+    content => {
+      'socket-binding' => "jgroups-host-a, jgroups-host-b",
+        }
      }
 }
