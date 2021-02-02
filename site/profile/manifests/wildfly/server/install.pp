@@ -105,7 +105,7 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
- wildfly_cli { tcpgossip:
+ wildfly_cli { 'tcpgossip':
  command  => {
  batch
 /subsystem=jgroups/stack=tcpgossip:add
