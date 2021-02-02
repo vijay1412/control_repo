@@ -106,7 +106,7 @@ wildfly::logging::category { 'org.jgroups':
         }
        }
  wildfly_cli { 'tcpgossip':
- command  => {"batch
+ command  => {
 /subsystem=jgroups/stack=tcpgossip:add
 /subsystem=jgroups/stack=tcpgossip/transport=TCP:add(socket-binding=jgroups-tcp)
 /subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP:add(socket-bindings=[jgroups-host-a,jgroups-host-b])
@@ -121,7 +121,6 @@ wildfly::logging::category { 'org.jgroups':
 /subsystem=jgroups/stack=tcpgossip/protocol=MFC:add
 /subsystem=jgroups/stack=tcpgossip/protocol=FRAG2:add
 /subsystem=jgroups/channel=ee:write-attribute(name=stack,value=tcpgossip)
-run-batch"
 }
     }
 
