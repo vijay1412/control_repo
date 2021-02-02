@@ -103,7 +103,7 @@ wildfly::logging::category { 'org.jgroups':
     wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
     ensure => present,
     content => {
-      'host' => "${amfam.grl.gossip.router}",
+      'host' => '${amfam.grl.gossip.router}',
       'port' => 8888,
         }
        }
