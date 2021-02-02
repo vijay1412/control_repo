@@ -105,8 +105,5 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
-     wildfly::jgroups::stack::tcpgossip { 'TCPGOSSIP':
-     initial_hosts       => '{amfam.nhq.gossip.router}[8888] ,{amfam.grl.gossip.router}[8888]',
-     num_initial_members => 2,
-  }
+    
 }
