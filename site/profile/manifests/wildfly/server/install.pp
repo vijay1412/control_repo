@@ -134,4 +134,20 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=FD_ALL":
     ensure => present,
     }
+ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=VERIFY_SUSPECT":
+    ensure => present,
+    }   
+    
+    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.NAKACK2":
+    ensure => present,
+    }   
+    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=UNICAST3":
+    ensure => present,
+    }   
+    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.STABLE":
+    ensure => present,
+    }   
+wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.GMS":
+    ensure => present,
+    }   
 }
