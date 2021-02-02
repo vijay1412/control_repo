@@ -108,7 +108,7 @@ wildfly::logging::category { 'org.jgroups':
  wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP":
     recursive => true,
     content   => {
-      'protocol' => 'TCPGOSSIP',
+      #'protocol' => 'TCPGOSSIP',
       'transport' => {
       'TCP' => {
         'socket-binding' => 'jgroups-tcp',
