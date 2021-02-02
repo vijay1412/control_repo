@@ -123,5 +123,5 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
     content => {
       'socket-binding' => "jgroups-host-a,jgroups-host-b",
         }
-
+     }
 }
