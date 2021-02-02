@@ -110,7 +110,7 @@ wildfly::logging::category { 'org.jgroups':
     content   => {
       'protocol' => {
       'TCPGOSSIP' => { 
-                'socket-binding' => ['jgroups-host-a,jgroups-host-b],
+       'socket-binding' => ['jgroups-host-a,jgroups-host-b'],
       }
     }
       'transport' => {
