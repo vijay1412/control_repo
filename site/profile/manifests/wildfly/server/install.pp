@@ -105,7 +105,7 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
- wildfly::resourece { '/subsystem=jgroups/stack=tcpgossip':
+ wildfly::resource { '/subsystem=jgroups/stack=tcpgossip':
  ensure => present ,
 }
 
