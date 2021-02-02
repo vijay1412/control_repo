@@ -109,9 +109,10 @@ wildfly::logging::category { 'org.jgroups':
     recursive => true,
     content   => {
       'protocol' => {
-      'TCPGOSSIP'
+      'TCPGOSSIP' => { 
+                'socket-binding' => ['jgroups-host-a,jgroups-host-b],
       }
-      
+    }
       'transport' => {
       'TCP' => {
         'socket-binding' => 'jgroups-tcp',
