@@ -94,7 +94,7 @@ wildfly::logging::category { 'org.jgroups':
      wildfly::resource { 'socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
       ensure => present,
     content => {
-      'host => amfam.nhq.gossip.router',
+      'host' => amfam.nhq.gossip.router,
       'port' => 8888,
         }
        }
