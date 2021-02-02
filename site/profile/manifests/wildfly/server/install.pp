@@ -115,7 +115,7 @@ wildfly::logging::category { 'org.jgroups':
     content   => {
       'protocol' => 'TCPGOSSIP',
      'TCP' => {
-        'socket-binding' => 'jgroups-tcp',
+        'socket-binding' => "jgroups-tcp",
       }
     }
 
