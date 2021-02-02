@@ -91,14 +91,14 @@ wildfly::logging::category { 'org.jgroups':
      #num_initial_members => 2,
      
      #}
-     wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
-      ensure => present,
-    content => {
+   wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
+   ensure => present,
+   content => {
       'host' => "amfam.nhq.gossip.router",
       'port' => 8888,
         }
-        wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
-      ensure => present,
+    wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
+    ensure => present,
     content => {
       'host' => "amfam.grl.gossip.router",
       'port' => 8888,
