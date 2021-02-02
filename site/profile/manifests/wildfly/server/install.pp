@@ -112,8 +112,5 @@ wildfly::logging::category { 'org.jgroups':
       'transport' => $transport,
     }
   }
-}
-
-
 
 }
