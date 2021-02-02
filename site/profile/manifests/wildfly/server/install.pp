@@ -127,4 +127,7 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=MERGE3":
     ensure => present
     }
+    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=FD_SOCK":
+    ensure =>present
+    }
 }
