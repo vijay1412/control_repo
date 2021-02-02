@@ -126,5 +126,5 @@ wildfly::logging::category { 'org.jgroups':
   #  content => {
    #   'socket-binding' => "jgroups-host-a, jgroups-host-b",
     #    }
-     #}
+     }
 }
