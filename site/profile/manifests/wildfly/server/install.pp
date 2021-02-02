@@ -105,9 +105,15 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
- wildfly::resource { '/subsystem=jgroups/stack=tcpgossip':
- ensure => present ,
+ wildfly::resource { "/subsystem=jgroups/stack=TCPGOSSIP":
+    recursive => true,
+    content   => {
+      'protocol'  => wildfly::objectify($protocols),
+      'transport' => $transport,
+    }
+  }
 }
+
 
 
 }
