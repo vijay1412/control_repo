@@ -109,7 +109,7 @@ wildfly::logging::category { 'org.jgroups':
     recursive => true,
     content   => {
       'protocol' => {
-      'TCPGOSSIP',
+      'TCPGOSSIP'
       }
       
       'transport' => {
