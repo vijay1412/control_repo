@@ -38,7 +38,6 @@ class { 'wildfly':
                        '-Damfam.grl.gossip.router=grldevjbossgr'
                        '-Djavax.net.ssl.tomcatkeystorefile=${profile::wildfly::server::java_keystore_file}'
                         '-Djavax.net.ssl.keyStorePassword =changeit'",
-                        '-Damfam.nhq.gossip.router=nhqdevjbossgr'
   }
 #~>
 #wildfly::restart { 'Restart required':
