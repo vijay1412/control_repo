@@ -105,5 +105,25 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
-    
+ wildfly_cli { tcpgossip:
+ command  => {
+ batch
+/subsystem=jgroups/stack=tcpgossip:add
+/subsystem=jgroups/stack=tcpgossip/transport=TCP:add(socket-binding=jgroups-tcp)
+/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP:add(socket-bindings=[jgroups-host-a,jgroups-host-b])
+/subsystem=jgroups/stack=tcpgossip/protocol=MERGE3:add
+/subsystem=jgroups/stack=tcpgossip/protocol=FD_SOCK:add
+/subsystem=jgroups/stack=tcpgossip/protocol=FD_ALL:add
+/subsystem=jgroups/stack=tcpgossip/protocol=VERIFY_SUSPECT:add
+/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.NAKACK2:add
+/subsystem=jgroups/stack=tcpgossip/protocol=UNICAST3:add
+/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.STABLE:add
+/subsystem=jgroups/stack=tcpgossip/protocol=pbcast.GMS:add
+/subsystem=jgroups/stack=tcpgossip/protocol=MFC:add
+/subsystem=jgroups/stack=tcpgossip/protocol=FRAG2:add
+/subsystem=jgroups/channel=ee:write-attribute(name=stack,value=tcpgossip)
+run-batch
+},
+    }
+
 }
