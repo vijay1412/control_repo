@@ -157,6 +157,10 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
      wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=FRAG2":
     ensure => present,
     }   
-   
+    wildfly::resource { "/subsystem=jgroups/channel=ee":
+     content => {
+      'stack' => 'tcpgossip',
+        }
+    }   
     
 }
