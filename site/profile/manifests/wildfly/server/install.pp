@@ -169,6 +169,5 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
  
 }
 
- ~> wildfly::reload { 'reload': }
  
  
