@@ -153,14 +153,14 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
     }   
    
  ->  wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
-   ensure => present,
+   #ensure => present,
    content => {
       'host' => "\${amfam.nhq.gossip.router}",
       'port' => 8888,
         }
         }
    -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
-    ensure => present,
+   # ensure => present,
     content => {
       'host' => "\${amfam.grl.gossip.router}",
       'port' => 8888,
