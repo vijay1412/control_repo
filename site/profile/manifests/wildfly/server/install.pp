@@ -166,5 +166,5 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
       'port' => 8888,
         }
        }
-   
+   ~> wildfly::reload { 'reload': }
 }
