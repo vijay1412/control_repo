@@ -73,7 +73,7 @@ wildfly::logging::category { 'org.jgroups':
     #},
    #}
    
-   # wildfly::resource { '/subsystem=undertow/server=default-server/ajp-listener=ajp':
+    wildfly::resource { '/subsystem=undertow/server=default-server/ajp-listener=ajp':
     content => {
       'max-post-size'        => 20000000,
       'scheme' =>https,
