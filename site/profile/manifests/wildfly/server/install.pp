@@ -178,6 +178,7 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
        content => {
        'jgroups-channel'=> 'activemq-cluster-${jboss.partition.name:DefaultPartition}',
       # 'connectors' => '["http-connector"]'
+         'connectors' => '["http-connector"]',
        }
        }   
        
