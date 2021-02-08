@@ -174,7 +174,7 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
        }
        }   
        
-     wildfly::resource {'/subsystem=messaging-activemq/server=default/broadcast-group=bg-group1':
+     wildfly::resource {'/subsystem=messaging-activemq/server=default/broadcast-group=bg-group2':
        content => {
        'jgroups-channel'=> 'activemq-cluster-${jboss.partition.name:DefaultPartition}',
       # 'connectors' => '["http-connector"]'
