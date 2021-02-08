@@ -192,8 +192,8 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
      wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=locking':
      
      content => {
-     'mode' => 'BATCH'
-     'isolation' => 'REPEATABLE_READ'
+     'mode' => 'BATCH',
+     'isolation' => 'REPEATABLE_READ',
      'default-cache' => 'repl',
      }
      
