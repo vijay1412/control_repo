@@ -172,6 +172,13 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
        'value'=> '"${jboss.partition.name:DefaultPartition}"',
        }
        }   
+       
+       wildfly::resource {'/subsystem=messaging-activemq/server=default:
+        content => {
+      'name'  => 'cluster-password',
+       'value'=> 'changeme',
+       }
+       }     
 }
 
  
