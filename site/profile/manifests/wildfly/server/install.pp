@@ -174,7 +174,8 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
        }   
        
        wildfly::resource {'/subsystem=messaging-activemq/server=default':
-        content => {
+       ensure => present,
+       content => {
       'name'  => 'cluster-password',
        'value'=> 'changeme',
        }
