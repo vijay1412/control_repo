@@ -166,14 +166,14 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
       'port' => 8888,
         }
        }
-        wildfly::resource {'/subsystem=messaging-activemq/server=default:
+        wildfly::resource {'/subsystem=messaging-activemq/server=default':
         content => {
       'name'  => 'cluster-user',
-       'value'=> '"${jboss.partition.name:DefaultPartition}"',
+       'value'=> '${jboss.partition.name:DefaultPartition}',
        }
        }   
        
-       wildfly::resource {'/subsystem=messaging-activemq/server=default:
+       wildfly::resource {'/subsystem=messaging-activemq/server=default':
         content => {
       'name'  => 'cluster-password',
        'value'=> 'changeme',
