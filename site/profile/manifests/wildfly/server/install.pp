@@ -197,7 +197,11 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
      #}
      
      #}
-      
+ 
+ wildfly::resource { '/subsystem=infinispan/cache-container=web/transport=TRANSPORT':
+ content {
+ cluster => '${jboss.partition.name:DefaultPartition}-web',
+
 }
 
  
