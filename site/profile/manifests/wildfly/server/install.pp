@@ -204,7 +204,19 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
  
    }
    }
-
+wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPORT':
+ content => {
+ cluster => '${jboss.partition.name:DefaultPartition}-ejb',
+ 
+   }
+   }
+   
+   wildfly::resource { '/subsystem=infinispan/cache-container=hibernate/transport=TRANSPORT':
+ content => {
+ cluster => '${jboss.partition.name:DefaultPartition}-hibernate',
+ 
+   }
+   }
 }
 
  
