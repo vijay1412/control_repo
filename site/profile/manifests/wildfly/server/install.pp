@@ -176,12 +176,18 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
        
      wildfly::resource {'/subsystem=messaging-activemq/server=default/broadcast-group=bg-group1':
        content => {
-       'jgroups-channel'=> 'activemq-cluster-jboss.partition.name:DefaultPartition',
+       'jgroups-channel' => '${activemq-cluster-jboss.partition.name:DefaultPartition}',
        #'jgroups-cluster' => 'activemq-cluster-jboss.partition'
       # 'connectors' => '["http-connector"]'
         # 'connectors' => '["http-connector"]',
        }
        }   
+       
+       wildfly::resource {'/subsystem=messaging-activemq/server=default/discovery-group=dg-group1':
+       content => {
+       'jgroups-channel' => 'activemq-cluster-jboss.partition.name:DefaultPartition',
+       }
+       }
        
   #   wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache':
    #  content => {
