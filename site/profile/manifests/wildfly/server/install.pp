@@ -208,15 +208,13 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        }
        
     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl':
-    path => '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file'
-    #content => {
     # 'mode' => 'ASYNC'
      #}
      }
      
- #  -> wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
+     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
 
- #    }
+     }
 
    #}
    # ~> wildfly::reload { 'reload': }
