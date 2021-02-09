@@ -229,12 +229,12 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
   
     # }
    
-     wildfly::resource { '/subsystem=infinispan/cache-container=web':
-     content => {
-     'default-cache'=> 'repl'
-     }
+     #wildfly::resource { '/subsystem=infinispan/cache-container=web':
+     #content => {
+     #'default-cache'=> 'repl'
+     #}
   
-     }
+    # }
      
     
  
