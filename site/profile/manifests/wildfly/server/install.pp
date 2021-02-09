@@ -212,7 +212,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
     # 'mode' => 'ASYNC'
      #}
      }
-     
+      ~> wildfly::reload { 'reload': }
    # wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=transaction':
    # content => {
   #  'mode' => 'BATCH'
