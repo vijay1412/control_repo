@@ -166,6 +166,27 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
       'port' => 8888,
         }
        }
+       
+       
+  wildfly::resource { '/subsystem=infinispan/cache-container=web/transport=TRANSPORT':
+ content => {
+ cluster => '${jboss.partition.name:DefaultPartition}-web',
+ 
+   }
+   }
+wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPORT':
+ content => {
+ cluster => '${jboss.partition.name:DefaultPartition}-ejb',
+ 
+   }
+   }
+   
+   wildfly::resource { '/subsystem=infinispan/cache-container=hibernate/transport=TRANSPORT':
+ content => {
+ cluster => '${jboss.partition.name:DefaultPartition}-hibernate',
+ 
+   }
+   }
         wildfly::resource {'/subsystem=messaging-activemq/server=default':
        # ensure => present,
         content => {
@@ -204,25 +225,6 @@ wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.pro
      
      #}
  
- wildfly::resource { '/subsystem=infinispan/cache-container=web/transport=TRANSPORT':
- content => {
- cluster => '${jboss.partition.name:DefaultPartition}-web',
- 
-   }
-   }
-wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPORT':
- content => {
- cluster => '${jboss.partition.name:DefaultPartition}-ejb',
- 
-   }
-   }
-   
-   wildfly::resource { '/subsystem=infinispan/cache-container=hibernate/transport=TRANSPORT':
- content => {
- cluster => '${jboss.partition.name:DefaultPartition}-hibernate',
- 
-   }
-   }
 }
 
  
