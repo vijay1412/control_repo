@@ -213,8 +213,8 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
      #}
      }
      
-   ~> wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
-  
+    wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
+    ensure => present
    }
    # ~> wildfly::reload { 'reload': }
     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=transaction':
