@@ -207,9 +207,9 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        }
        }
        
-     #wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl':
-    #content => {
-    #'mode' => 'ASYNC'
+    # wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl':
+    # content => {
+    # 'mode' => 'ASYNC'
      #}
      }
      
@@ -235,10 +235,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
      #}
   
     # }
-     
-    
- 
-}
+     #}
 
  
  
