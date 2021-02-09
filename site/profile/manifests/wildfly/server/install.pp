@@ -207,12 +207,16 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        }
        }
        
-     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl':
+    wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl':
     # content => {
     # 'mode' => 'ASYNC'
      #}
      }
-     # ~> wildfly::reload { 'reload': }
+     
+   ~> wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
+  
+   }
+   # ~> wildfly::reload { 'reload': }
     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=transaction':
     content => {
     'mode' => 'BATCH'
@@ -224,10 +228,6 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
     'isolation' => 'REPEATABLE_READ'
      }
      }
-    
-  wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/store=file':
-  
-   }
    
      wildfly::resource { '/subsystem=infinispan/cache-container=web':
      content => {
