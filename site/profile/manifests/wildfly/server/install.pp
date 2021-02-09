@@ -221,7 +221,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
      
       wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=locking':
     content => {
-    'isolation' => 'REPETABLE_READ'
+    'isolation' => 'REPEATABLE_READ'
      }
      }
     
