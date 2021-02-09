@@ -191,7 +191,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        # ensure => present,
         content => {
        'cluster-user'=> '${jboss.partition.name:DefaultPartition}',
-       'cluster-password'=> 'changeme'
+      # 'cluster-password'=> 'changeme'
        }
        }   
        
