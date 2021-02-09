@@ -197,7 +197,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        
      wildfly::resource {'/subsystem=messaging-activemq/server=default/broadcast-group=bg-group1':
        content => {
-       'jgroups-channel' => '${activemq-cluster-jboss.partition.name:DefaultPartition}',
+       'jgroups-channel' => 'activemq-cluster-${jboss.partition.name:DefaultPartition}',
        #'jgroups-cluster' => 'activemq-cluster-jboss.partition'
       # 'connectors' => '["http-connector"]'
         # 'connectors' => '["http-connector"]',
@@ -206,7 +206,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
        
        wildfly::resource {'/subsystem=messaging-activemq/server=default/discovery-group=dg-group1':
        content => {
-       'jgroups-channel' => 'activemq-cluster-jboss.partition.name:DefaultPartition',
+       'jgroups-channel' => 'activemq-cluster-${jboss.partition.name:DefaultPartition}',
        }
        }
        
