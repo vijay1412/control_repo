@@ -99,16 +99,13 @@ wildfly::logging::category { 'org.jgroups':
     }
 
     }
-       
-  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
+   wildfly::resource { '/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP':
    ensure => present,
     content => {
      socket-bindings => ['jgroups-host-a,jgroups-host-b'],
     
         }
         }
-  
-  
   
   wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
    #ensure => present,
