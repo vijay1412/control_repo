@@ -117,9 +117,10 @@ wildfly::logging::category { 'org.jgroups':
    # }  
    wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
    ensure => present,
-    #content => {
-     #'socket-bindings' => '[jgroups-host-,jgroups-host-b]',
-     
+    content => {
+     socket-bindings => ['jgroups-host-a,jgroups-host-b'],
+    
+        }
         }
     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=MERGE3":
     ensure => present,
