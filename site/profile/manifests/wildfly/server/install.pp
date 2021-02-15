@@ -103,6 +103,8 @@ wildfly::logging::category { 'org.jgroups':
         }
        }
    
+  ~> wildfly::reload { 'reload': }
+  
  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip":
     recursive => true,
     content   => {
