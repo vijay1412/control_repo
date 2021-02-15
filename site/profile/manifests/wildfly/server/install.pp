@@ -112,7 +112,7 @@ wildfly::logging::category { 'org.jgroups':
    #    }
     #    }
     
-  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol="org.jgroups.protocols.TCPGOSSIP":
+  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
    ensure => absent, 
     }  
 wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
