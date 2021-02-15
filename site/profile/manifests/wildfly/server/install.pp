@@ -88,14 +88,14 @@ wildfly::logging::category { 'org.jgroups':
         }
        }
        
-     ->  wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
+      wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
    #ensure => present,
    content => {
       'host' => '${amfam.nhq.gossip.router}',
       'port' => 8888,
         }
         }
-   -> wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
+    wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-b':
    # ensure => present,
     content => {
       'host' => '${amfam.grl.gossip.router}',
@@ -125,7 +125,7 @@ wildfly::logging::category { 'org.jgroups':
   #wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
   # ensure => absent, 
    # }  
-->   wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
+  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
    ensure => present,
     content => {
      socket-bindings => ['jgroups-host-a,jgroups-host-b'],
