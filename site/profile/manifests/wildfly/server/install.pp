@@ -125,6 +125,8 @@ wildfly::logging::category { 'org.jgroups':
   #wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
   # ensure => absent, 
    # }  
+   
+   ~> wildfly::reload { 'reload': }
   wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
    ensure => present,
     content => {
@@ -221,7 +223,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
      }
 
    #}
-   ~> wildfly::reload { 'reload': }
+  # ~> wildfly::reload { 'reload': }
     wildfly::resource { '/subsystem=infinispan/cache-container=web/replicated-cache=repl/component=transaction':
     content => {
     'mode' => 'BATCH'
