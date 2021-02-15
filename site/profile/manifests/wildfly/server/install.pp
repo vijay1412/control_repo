@@ -106,14 +106,13 @@ wildfly::logging::category { 'org.jgroups':
 
     }
   }
- wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
- content => {
-      interface => "\$jboss.bind.address",
-      port => 7800,
-        }
-        }
+# wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+ #content => {
+  #    interface => "\$jboss.bind.address",
+   #    }
+    #    }
 wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
-   # ensure => present,
+   ensure => present,
     #content => {
      #'socket-bindings' => '[jgroups-host-,jgroups-host-b]',
         #}
