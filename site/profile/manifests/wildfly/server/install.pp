@@ -106,6 +106,12 @@ wildfly::logging::category { 'org.jgroups':
 
     }
   }
+ wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+ content => {
+      interface => undefine,
+      port => 7800,
+        }
+        }
 
 wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
     ensure => present,
