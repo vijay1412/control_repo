@@ -111,12 +111,16 @@ wildfly::logging::category { 'org.jgroups':
   #    interface => "\$jboss.bind.address",
    #    }
     #    }
+    
+  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol="org.jgroups.protocols.TCPGOSSIP":
+   ensure => absent, 
+    }  
 wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
    ensure => present,
     #content => {
      #'socket-bindings' => '[jgroups-host-,jgroups-host-b]',
+     
         #}
-    }
     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=MERGE3":
     ensure => present,
     }
