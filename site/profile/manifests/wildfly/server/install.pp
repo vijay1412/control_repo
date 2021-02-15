@@ -102,8 +102,7 @@ wildfly::logging::category { 'org.jgroups':
       'port' => 8888,
         }
        }
-   
-  ~> wildfly::reload { 'reload': }
+
   
  wildfly::resource { "/subsystem=jgroups/stack=tcpgossip":
     recursive => true,
@@ -126,7 +125,7 @@ wildfly::logging::category { 'org.jgroups':
   #wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
   # ensure => absent, 
    # }  
-   wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
+->   wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
    ensure => present,
     content => {
      socket-bindings => ['jgroups-host-a,jgroups-host-b'],
