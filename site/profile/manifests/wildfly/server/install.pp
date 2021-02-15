@@ -112,11 +112,10 @@ wildfly::logging::category { 'org.jgroups':
       port => 7800,
         }
         }
-
-wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/socket-discovery-protocol=TCPGOSSIP":
+wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=TCPGOSSIP":
     ensure => present,
     content => {
-      'socket-binding' => "jgroups-host-a, jgroups-host-b",
+      'socket-binding' => "[jgroups-host-a], [jgroups-host-b]",
         }
      }
     wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=MERGE3":
