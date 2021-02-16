@@ -170,6 +170,7 @@ wildfly::logging::category { 'org.jgroups':
     wildfly::resource { "/subsystem=jgroups/channel=ee":
      content => {
       'stack' => 'tcpgossip',
+      cluster => "\${jboss.partition.name}"
         }
     }   
        
