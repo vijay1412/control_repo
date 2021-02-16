@@ -117,11 +117,11 @@ wildfly::logging::category { 'org.jgroups':
 
     }
   }
-# wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
- #content => {
-  #    interface => "\$jboss.bind.address",
-   #    }
-    #    }
+wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+ content => {
+      interface => "undefine",
+       }
+        }
     
   #wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
   # ensure => absent, 
