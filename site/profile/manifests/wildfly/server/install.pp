@@ -246,9 +246,13 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
      content => {
      'default-cache'=> 'repl'
      }
-  
+      wildfly::resource { '/subsystem=transaction':
+      
+  content => {
+     'node-identifier' => '${jboss.node.name}'
      }
-     }
+    }
+  }
 
  
  
