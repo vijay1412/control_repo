@@ -87,11 +87,9 @@ wildfly::logging::category { 'org.jgroups':
       'generate-strings-as-char-arrays' => true,
         }
        }
-       wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
-       ensure => absent,
-        }
+      
         
-        wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+       wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
        ensure => present,
        port => 7800,
         }
