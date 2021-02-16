@@ -119,7 +119,7 @@ wildfly::logging::category { 'org.jgroups':
   }
 wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
  content => {
-     # interface => "undefine",
+  'interface' => 'undefine',
      'port' => '7800'
        }
         }
