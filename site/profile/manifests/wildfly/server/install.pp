@@ -251,6 +251,9 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
   content => {
      'node-identifier' => '${jboss.node.name}'
      }
+     }
+      wildfly::resource { '/subsystem=modcluster':  
+      ensure => absent,
     }
   }
 
