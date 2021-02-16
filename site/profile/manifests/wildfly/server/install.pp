@@ -87,6 +87,15 @@ wildfly::logging::category { 'org.jgroups':
       'generate-strings-as-char-arrays' => true,
         }
        }
+       wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+       ensure => absent,
+        }
+        
+        wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+       ensure => present,
+       port => 7800,
+        }
+       
        
       wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
    #ensure => present,
@@ -117,9 +126,9 @@ wildfly::logging::category { 'org.jgroups':
 
     }
   }
-wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
-ensure => absent,
-        }
+#wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+#ensure => absent,
+        #}
     
   #wildfly::resource { "/subsystem=jgroups/stack=tcpgossip/protocol=org.jgroups.protocols.TCPGOSSIP":
   # ensure => absent, 
