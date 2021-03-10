@@ -256,7 +256,7 @@ wildfly::resource { '/subsystem=infinispan/cache-container=ejb/transport=TRANSPO
       ensure => absent,
     }
   wildfly::config::module { 'org.postgresql':
-  source       => 'https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1103-jdbc4/postgresql-9.3-1103-jdbc4.jar',
+  #source       => 'https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1103-jdbc4/postgresql-9.3-1103-jdbc4.jar',
   dependencies => ['javax.api', 'javax.transaction.api'],
   require      => Class['wildfly'],
 }
