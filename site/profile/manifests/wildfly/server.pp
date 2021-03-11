@@ -26,5 +26,6 @@ class profile::wildfly::server (
    contain ::profile::wildfly::server::filesystems
    contain ::profile::wildfly::server::install
         Class['profile::wildfly::server::filesystems']
-     -> Class['profile::wildfly::server::install']        
+     -> Class['profile::wildfly::server::install']
+     -> Class['profile::wildfly::server::drivers']
   }
