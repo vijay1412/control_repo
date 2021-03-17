@@ -26,6 +26,8 @@ class { 'wildfly':
   #java_home => '$java_home',
   java_home => Stdlib::Unixpath($profile::java::jdk::java_home),
   config            => 'standalone-full-ha.xml',
+  user => 'jbo101'
+  group => 'jas'
   #require => Class['::profile::java::jdk',],
   #conf_file      => '/etc/wildfly/wildfly.conf',
   #dirname           =>'/opt/wildfly/wildfly-14',
