@@ -91,10 +91,10 @@ wildfly::logging::category { 'org.jgroups':
        }
       
         
-       #wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
-       #ensure => present,
-       #port => '7800',
-        #}
+       wildfly::resource {"/socket-binding-group=standard-sockets/socket-binding=jgroups-tcp":
+       ensure => present,
+       port => '7800',
+        }
        
        
       wildfly::resource { '/socket-binding-group=standard-sockets/remote-destination-outbound-socket-binding=jgroups-host-a':
