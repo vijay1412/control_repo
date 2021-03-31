@@ -25,6 +25,7 @@ class { 'wildfly':
   },
   #java_home => '$java_home',
   java_home => Stdlib::Unixpath($profile::java::jdk::java_home),
+  systemd_template => 'profile/wildfly/server/wildfly.systemd.service',
   config            => 'standalone-full-ha.xml',
   user => 'jbo101'
   group => 'jas'
